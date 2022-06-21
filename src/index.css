@@ -1,13 +1,827 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;600;700&family=Poppins:wght@500;600;700;800&family=Rufina:wght@400;700&family=Work+Sans:wght@400;500&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color:#d2dbdd; */
+    font-family: 'Work Sans', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* *************************
+Common Work
+************************ */
+
+h1{
+    font-size: 6rem;
+    font-weight: 600; 
+}
+h3{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+p{
+    color: var(--para);
+    line-height: 1.6;
+    font-size: 1.3rem;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+.section{
+    padding: 0 9rem;
+    padding-top: 5rem;
+}
+
+.container{
+    max-width: 140rem;
+    margin: 0 auto;
+}
+
+.grid{
+    display: grid;
+    gap: 9rem;
+}
+.grid-two-column{
+    grid-template-columns:repeat(2 , 1fr);
+    /* above code means 2 eqaual columns */
+}
+.grid-three-column{
+    grid-template-columns:repeat(3 , 1fr);
+}
+.grid-four-column{
+    grid-template-columns:repeat(4 , 1fr);
+}
+
+.card-btn{
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    margin: 1rem 0;
+}
+
+/* *************************
+Navbar
+************************ */
+.header-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s linear;
+}
+
+.netflix-name-img{
+    height: 2rem;
+    margin-left: 1.5rem;
+}
+
+.netflix-logo{
+    height: 2.3rem;
+    padding: 1px;
+    background-color: white;
+}
+
+.main-header{
+    background-color:black;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1rem 4rem;
+    width: 100%;
+    height: 60px;
+    color: white;
+    position:absolute;
+    z-index: 1;
+    /* position:fixed; */
+}
+
+.main-nav{
+    display: flex;
+}
+
+.main-nav ul{
+  display: flex;
+  gap: 4rem;
+  text-align: right;
+  font-size: 1.2rem;
+} 
+
+.nav-link{
+    display: inline-block;
+    color: red;
+    transition: all .3s linear;
+}
+
+.nav-link:hover{
+    color: #8490ff;;
+}
+
+
+/* *************************
+Home - Page
+************************ */
+.container{
+    position: relative;
+}
+.bg-image{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(./images/netflix-img3.png);
+}
+
+.text-om-img{
+    color: white;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+.text-om-img img{
+    opacity: 0.5;
+}
+.text-om-img h1{
+    font-size: 4rem;
+    font-weight: 900;
+    transition: all 0.6s linear;
+    text-align: center;
+}
+
+.text-om-img h3{
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 500;
+    transition: all 0.6s linear;
+}
+
+.text-om-img p{
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    font-weight: 400;
+    transition: all 0.6s linear;
+}
+
+.email_content{
+    margin-top: 1rem;
+    transition: all 0.6s linear;
+}
+
+.email_txt{
+    width: 80%;
+    height: 60px;
+    font-size: 1rem;
+    border: none;
+    padding: 5px  10px;
+    transition: all 0.6s linear;
+}
+
+.email-btn{
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    height: 60px;
+    background: -webkit-linear-gradient(right, rgba(178, 35, 31, 1.0), rgba(178, 76, 41, 1.0));
+    background: -moz-linear-gradient(right, rgba(178, 35, 31, 1.0), rgba(178, 76, 41, 1.0));
+    background: linear-gradient(to left, rgba(178, 35, 31, 1.0), rgba(178, 76, 41, 1.0));;
+    color: white;
+    border: none;
+    position: absolute;
+    transition: all 0.6s linear;
+}
+
+/* *******************************************
+Card section
+******************************************* */
+.card-heading{
+    padding: 0 9rem;
+    padding-top: 3rem;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 550;
+}
+
+.card-para{
+    text-align: center;
+    color: grey;
+}
+
+.card-images{
+    gap: 3rem;
+    background-color: #F8F8FF;
+    transition: all 0.5s linear;
+}
+
+.card-images img{
+    width: 100%;
+    border-radius: 7px;
+    position: relative;
+    overflow:hidden;
+    height: 260px;
+}
+
+.img-overlay{
+    position: relative;
+    overflow: hidden;
+}
+
+.img-overlay .overlay{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    transition: all 0.3s linear;
+    border-radius:7px ;
+}
+
+.overlay h3{
+    color: white;
+    font-size: 3rem;
+}
+
+.img-overlay:hover >.overlay{
+    transform: translateY(0%);
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* *********************************************
+Work data Section Start
+********************************************* */
+.section-work-data{
+    margin-top: 5rem ;
+    /* background:-webkit-linear-gradient(
+        0deg,
+        rgb(132 144 255) 0%,
+        rgb(98 189 252) 100%
+      ); */
+      background: -webkit-linear-gradient(right, rgba(178, 35, 31, 1.0), rgba(178, 76, 41, 1.0));
+      background: -moz-linear-gradient(right, rgba(178, 35, 31, 1.0), rgba(178, 76, 41, 1.0));
+      background: linear-gradient(to left, rgba(178, 35, 31, 1.0), rgba(178, 76, 41, 1.0));;
+    text-align: center;
+    transition: all 0.7s linear;
+    color: var(--white);
+    padding: 5rem;
+}
+
+.section-work-data h2{
+    font-size: 2rem;
+}
+.counter-numbers{
+    font-size: 3.8rem;
+}
+
+.section-work-data p{
+    color: var(--white);
+    text-transform:capitalize;
+}
+
+/* *********************************************
+Contact Section Start
+********************************************* */
+.contact-heading{
+    font-size:2.5rem;
+    font-weight: 400;
+}
+
+.section-contact-main{
+    max-width: 70rem;
+    margin: 0 auto;
+    margin-top: 4rem;
+    transition: all 0.7s linear;
+    padding: 0 10rem;
+} 
+
+.section-contact-main .grid{
+    gap: 3rem;
+}
+
+
+.section-contact-main form{
+    display: flex;
+    flex-direction: column;
+    gap:3.2rem;
+}
+
+.section-contact-main input,
+.section-contact-main textarea{
+    padding: 0.5rem 0.5rem;
+    border: 0.1rem solid #c9c9c9;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: "work sans";
+    width: 100%;
+    transition: all 0.3s linear;
+}
+
+.section-contact-main input[type="submit"]{
+    max-width: 23%;
+    padding: 1rem;
+    border: none;
+}
+
+.section-contact-main input[type="submit"]:hover{
+    /* color: white; */
+    box-shadow: 1px 1px 10px 3px black;
+}
+.btn-send{
+    background: rgba(178, 35, 31, 1.0);
+    background: -webkit-linear-gradient(right, rgba(178, 35, 31, 1.0), rgba(178, 76, 41, 1.0));
+    background: -moz-linear-gradient(right, rgba(178, 35, 31, 1.0), rgba(178, 76, 41, 1.0));
+    background: linear-gradient(to left, rgba(178, 35, 31, 1.0), rgba(178, 76, 41, 1.0));;
+}
+
+
+/* *********************************************
+footer Section Start
+********************************************* */
+.section-footer{
+    margin-top: 5rem;
+    background: black;
+    color: white;
+    transition: all 0.7s linear;
+}
+
+.section-footer h3{
+    color: var(--white);
+    margin-bottom: 1rem ;
+
+} 
+
+.f-about p{
+    color: #adadad;
+    font-size: 1rem;
+}
+
+.f-links ul,
+.f-services ul,
+.f-address address{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.f-links li,
+.f-links a,
+.f-services li,
+.f-services a{
+    font-size: 1rem;
+    color: #adadad;
+    text-transform: capitalize;
+}
+
+.f-links span,
+.f-services span,
+.f-address span{
+    margin-right: 1rem;
+}
+
+.f-address p,
+.f-address p a{
+    font-size: 1rem;
+    font-style: normal;
+    color: #adadad;
+}
+
+.f-social-icons{
+    /* margin: 3rem 0; */
+    text-align: center;
+    color: #adadad;
+}
+
+.f-social-icons .icons{
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--icons-bg);
+    display: inline-block;
+    position: relative;
+    color: var(--white);
+    animation: water-wave 3s linear infinite;
+    padding: 0.8rem;
+    cursor: pointer;
+}
+
+.f-credits p{
+    font-size: 1rem;
+    text-align: center;
+    color: #adadad;
+    padding-bottom: 1rem;
+}
+
+.section-footer a:hover, 
+.section-footer a:active{
+    color: var(--white );
+}
+
+.seperate-div{
+    width: 100%;
+    gap: 1px;
+}
+
+/* *********************************************
+Scroll design
+********************************************* */
+
+.scroll{
+    position: fixed;
+    right: 2%;
+    bottom: 5%;
+    /* z-index: -1; */
+}
+
+.scroll-top{
+    /* width: 5rem;
+    height: 5rem; */
+    background: var(--helper);
+    display: inline-block;
+    padding: 1.4rem 1.8rem;
+    color: var(--heading);
+    animation: water-wave 3s linear infinite;
+    /* position: relative; */
+    cursor: pointer;    
+}
+
+.scroll-icon{
+    color:var(--white);
+    font-size: 3rem;
+    margin-top: -5px;
+
+}
+
+/* *********************************************
+Responsive design
+********************************************* */
+
+@media screen and (max-width: 1500px)
+{
+    .section-home .text-om-img h1{
+        font-size: 3rem;
+        width: 100%;
+    }
+
+    .section-home .text-om-img h3{
+        margin: 1rem;
+        font-size: 1.5rem;
+        width: 100%;
+        font-weight: 300;
+    }
+
+    .section-footer{
+        padding: 0 8rem;
+        padding-top: 5rem;
+    }
+
+    .f-links span, .f-services span, .f-address span {
+        margin-right: 0rem;
+    }
+
+    .section-footer{
+        gap: 5rem;
+    }
+}
+
+@media screen and (max-width: 1400px)
+{
+    .section-home .text-om-img h1{
+        font-size: 3rem;
+        width: 100%;
+    }
+
+    .section-home .text-om-img h3{
+        margin: 1rem;
+        font-size: 1.5rem;
+        width: 100%;
+        font-weight: 300;
+    }
+
+    .card-images{
+        padding: 0 5rem;
+        padding-top: 5rem;
+    }
+
+    .section-contact-main{
+        padding: 0 0rem;
+    } 
+
+    .section-footer{
+        padding: 0 6rem;
+        padding-top: 5rem;
+    }
+
+    .f-about p {
+        color: #adadad;
+        font-size: 0.9rem;
+    }
+
+    .section-footer .grid{
+        gap: 4rem;
+    }
+
+    .f-services li{
+        color: red;
+    }
+}
+
+@media screen and (max-width: 1200px)
+{
+    .section-home .text-om-img h1{
+        font-size: 2.9rem;
+        width: 100%;
+    }
+
+    .section-home .text-om-img h3{
+        margin: 2rem;
+        font-size: 1.3rem;
+        width: 100%;
+        font-weight: 300;
+    }
+
+    .section-home .text-om-img p{
+        font-size: 1.2rem;
+    }
+
+    .card-images{
+        padding: 0 3rem;
+        padding-top: 5rem;
+    }
+
+    .section-contact-main{
+        padding: 0 0rem;
+    } 
+    .section-footer .grid{
+        gap: 5rem;
+    }
+}
+
+@media screen and (max-width: 1100px)
+{
+    .section-home .text-om-img h1{
+        font-size: 2.7rem;
+        width: 100%;
+    }
+
+    .card-images{
+        padding: 0 1.2rem;
+        padding-top: 5rem;
+    }
+
+    .section-contact-main{
+        padding: 0 0rem;
+    } 
+
+    .section-contact-main input[type="submit"]{
+        max-width: 30%;
+    }
+
+    .section-footer .grid{
+        gap: 3rem;
+    }
+
+    .f-links li, .f-links a, .f-services li, .f-services a {
+        font-size: 0.9rem;
+    }
+
+    .f-address h3{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 1000px)
+{
+    .section-home .text-om-img h1{
+        font-size: 2.6rem;
+        width: 100%;
+    }
+
+    .email-btn{
+        top:100%;
+        left: 37%;
+        margin-top:1rem;
+    }
+    .email_txt{
+        width: 110%;
+    }
+    .card-images{
+        grid-template-columns:repeat(2 , 1fr);
+        padding: 0 3rem;
+        padding-top: 5rem;
+    }
+
+    .section-work-data{
+        margin-top: 5rem ;
+        padding: 3rem;
+    }
+    
+    .section-work-data h2{
+        font-size: 2rem;
+    }
+    .counter-numbers{
+        font-size: 3.5rem;
+    }
+    
+    .section-work-data p{
+        font-size: 1rem;
+    } 
+}
+
+@media screen and (max-width: 970px)
+{
+    .section-home .text-om-img h1{
+        font-size: 2.4rem;
+        width: 100%;
+    }
+    .email-btn{
+        left: 34%;
+    }
+
+    .section-work-data{
+        margin-top: 5rem ;
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 890px)
+{
+    .section-home .text-om-img h1{
+        font-size: 2.3rem;
+        width: 100%;
+    }
+
+    .main-nav{
+        display: none;
+    }
+
+    .header-logo{
+        transition: all .3s linear;
+        width: 100%;
+    }
+    .email-btn{
+        font-size: 1.4rem;
+        height: 44px;
+    }
+    .card-images{
+        grid-template-columns:repeat(2 , 1fr);
+        padding: 0 2rem;
+        padding-top: 4rem;
+    }
+    .section-work-data .container{
+        grid-template-columns:repeat(2 , 1fr);
+        gap: 2rem;
+    }
+
+    .section-contact-main input[type="submit"]{
+        max-width: 30%;
+    }
+
+    .section-contact{
+        padding: 2rem 3rem;
+    }
+}
+
+@media screen and (max-width: 800px)
+{
+
+    .footer-div{
+        display: block;
+    }
+
+    .seperate-div{
+        padding: 3rem 0;
+        display: grid;
+        grid-template-columns:repeat(2 , 1fr);
+    }
+}
+@media screen and (max-width: 700px)
+{
+    .section-home .text-om-img h1{
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    .section-home .text-om-img h3{
+        margin: 2rem;
+        font-size: 1.2rem;
+        width: 100%;
+        font-weight: 300;
+    }
+
+    .section-home .text-om-img p{
+        font-size: 1.1rem;
+    }
+
+    .email-btn{
+        top:100%;
+        left: 25%;
+        margin-top:1rem;
+    }
+
+    .card-heading{
+        padding: 0 9rem;
+        padding-top: 3rem;
+        font-size: 2.7rem;
+        text-align: center;
+        font-weight: 550;
+    }
+    
+    .card-para{
+        text-align: center;
+        color: grey;
+    }
+
+    .card-images{
+        grid-template-columns:repeat(1 , 1fr);
+        padding: 0 3rem;
+        padding-top: 5rem;
+    }
+    .contact-div{
+        grid-template-columns:repeat(1 , 1fr);
+    }
+
+    .section-contact-main input[type="submit"]{
+        max-width: 33%;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    .section-home .text-om-img h1{
+        font-size: 1.8rem;
+        width: 100%;
+    }
+
+    .section-home .text-om-img h3{
+        margin: 2rem;
+        font-size: 1.2rem;
+        width: 100%;
+        font-weight: 300;   
+        margin-left: -0.9rem;
+    }
+
+    .section-home .text-om-img p{
+        font-size: 1rem;
+        margin-left: -1rem;
+    }
+
+    .email_txt{
+        width: 130%;
+        margin-left: -2rem;
+    }
+
+    .email-btn{
+        top:100%;
+        left: 23%;
+        margin-top:1rem;
+        font-size: 1rem;
+    }
+
+    .card-heading{
+        padding: 0 9rem;
+        padding-top: 3rem;
+        font-size: 2.2rem;
+        text-align: center;
+        font-weight: 550;
+    }
+    
+    .card-para{
+        text-align: center;
+        color: grey;
+    }
+    .card-images{
+        padding-top: 3rem;
+    }
+
+    .section-contact-main input[type="submit"]{
+        max-width: 38%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .card-heading{
+        padding: 0 9rem;
+        padding-top: 3rem;
+        font-size: 1.8rem;
+        text-align: center;
+        font-weight: 550;
+    }
+    
+    .card-para{
+        text-align: center;
+        color: grey;
+        font-size: 1rem;
+    }
 }

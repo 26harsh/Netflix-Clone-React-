@@ -4,7 +4,6 @@
 
 - The use of **Components** is exact as expected.
 - **Header, Body and Footer** are aligned properly
-- **Dark mode** is implemented perfectly
 - **UI** is impressive
 - UI is perfectly **Responsive**
 - **Animation** is good
